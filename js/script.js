@@ -9,7 +9,10 @@
 var outputList = document.getElementsByClassName('list')[0];
 
 // 1. chiedi all’utente il cognome
-var lastName = prompt('inserisci il tuo cognome con la prima lettera maiuscola');
+var lastName = prompt('inserisci il tuo cognome');
+
+// Trasformo laprima lettera maiuscola del cognome
+lastName = lastName.charAt(0).toUpperCase() + lastName.substring(1);
 
 // 2. inseriscilo in un array dove sono presenti già altri cognomi: ‘Bianchi’, ‘Neri’, ‘Rossi’, ‘Verdi’, ‘Gialli’
 var lastNameList = ['Bianchi', 'Neri', 'Rossi', 'Verdi', 'Gialli'];
@@ -34,24 +37,3 @@ var outputPosition = document.getElementById('position');
 var position = lastNameListOrdered.indexOf(lastName) + 1;
 
 outputPosition.innerHTML = 'La tua posizione in elenco è: ' + position;
-
-
-
-
-// Soluzione alternativa per il punto 3
-/*
-var listOutput = document.getElementById("myList");
-var lastNameList = ['Bianchi', 'Neri', 'Rossi', 'Verdi', 'Gialli'];
-var lastName = prompt('inserisci il tuo cognome');
-lastNameList.push(lastName);
-
-lastNameListOrdered = lastNameList.sort();
-
-lastNameListOrdered.forEach((item)=>{
-  var li = document.createElement("li");
-  li.innerText = item;
-  listOutput.appendChild(li);
-})
-*/
-
-
